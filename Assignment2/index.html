@@ -102,7 +102,7 @@
       <h1>Mozilla</h1>
       <!-- insert <img> element, link to the small
             version of the Firefox logo-->
-      <img src="firefox_logo-only_RGB (120).png" alt="Firefox Logo">
+      <img src="firefox_logo-only_RGB120.png" alt="Firefox Logo">
 
     </header>
 
@@ -110,7 +110,7 @@
       <article>
         <!-- insert iframe from youtube -->
         
-        <iframe width="400" height="315" src="https://www.youtube.com/embed/ojcNcvb1olg?si=34reg9eI08Sdc-hL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        <iframe width="400" height="315" src="https://www.youtube.com/embed/ojcNcvb1olg?si=34reg9eI08Sdc-hL" title="YouTube video player" style="border: 0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
         <h2>Rocking the free web</h2>
 
@@ -124,26 +124,26 @@
         
         <a href="https://www.mozilla.org/en-US/firefox/new/">
           <img 
-          srcset="firefox_logo-only_RGB (120).png 120w, 
-          firefox_logo-only_RGB (400).png 400w"
+          srcset="firefox_logo-only_RGB120.png 120w, 
+          firefox_logo-only_RGB400.png 400w"
           sizes="(max-width: 500px) 120px, 400px"
-          src = "firefox_logo-only_RGB (400).png" 
+          src = "firefox_logo-only_RGB400.png" 
           alt = "Firefox logo 400px">
         </a>
         <a href="https://www.mozilla.org/">
           <img
-          srcset="mozilla-dinosaur-head (120).png 120w, 
-          mozilla-dinosaur-head (400).png 400w"
+          srcset="mozilla-dinosaur-head120.png 120w, 
+          mozilla-dinosaur-head400.png 400w"
           sizes="(max-width: 500px) 120px, 400px" 
-          src = "mozilla-dinosaur-head(400).png" 
+          src = "mozilla-dinosaur-head400.png" 
           alt = "Dino head 400px">
         </a>
         <a href="https://addons.mozilla.org/">
           <img
-          srcset="firefox-addons (120).png 120w, 
-          firefox-addons (400).png 400w"
+          srcset="firefox-addons120.jpg 120w, 
+          firefox-addons400.jpg 400w"
           sizes="(max-width: 500px) 120px, 400px" 
-          src = "firefox-addons(400).jpg" 
+          src = "firefox-addons400.jpg" 
           alt = "Firefox addon 400px">
         </a>
         <a href="https://developer.mozilla.org/en-US/">
@@ -155,6 +155,12 @@
 
       <div class="red-panda">
         <!-- insert picture element -->
+        <picture>   
+            <source 
+            media = "(max-width: 600px)"
+            srcset="red-panda600.jpg">
+            <img src = "red-panda1200.jpg" alt = "red panda">
+        </picture>
       </div>
 
     </main>
