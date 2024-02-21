@@ -3,3 +3,12 @@ html {
   }
   
   /* Your CSS below here */
+
+  .box {
+    width: 200px;
+    line-height: 10;
+    margin:auto;
+    font-size: 18px;
+    
+
+  }
