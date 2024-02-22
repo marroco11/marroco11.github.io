@@ -21,12 +21,18 @@ body {
     margin: 0 auto;
     padding: 0 20px;
     max-width: 980px;
+    
+    /* FLexible size when browser window shrinks */
+    
     display: flex;
   }
   
   nav {
     background-color: #000;
     padding: .5em;
+
+    /* Navigation bar stuck at the top of the viewport */
+
     position: sticky;
     top: 0;
   }
@@ -35,6 +41,9 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+
+    /* To display the navigation items in a row */
+
     display: flex;
     justify-content: space-between;
   }
@@ -49,6 +58,9 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
+
+    /* The photographs to display 2 column grid */
+
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1px;
@@ -56,6 +68,9 @@ body {
 
   .feature {
       width: 200px;
+
+      /* Text wrap around the image*/
+
       float: left;
       margin-right: 1em;
   }
