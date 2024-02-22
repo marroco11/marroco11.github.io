@@ -46,7 +46,7 @@
 
   @font-face {
     font-family: 'Roboto Slab';
-    src: url('Roboto_Slab/RobotoSlab-Bold.ttf') format('ttf');
-    font-weight: normal;
+    src: url('Roboto_Slab/RobotoSlab-Bold.woff') format('woff');
+    font-weight: bold;
     font-style: normal;
   }
