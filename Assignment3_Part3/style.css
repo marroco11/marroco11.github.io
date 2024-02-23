@@ -81,10 +81,50 @@ html {
 
 h1, h2 {
   font-family: 'ambleregular', sans-serif;
-  font-weight: bolder;
   letter-spacing: 2px;
+}
+
+h1 {
+  font-size: 8rem;
+  text-align: center;
+}
+
+h2 {
+  font-size: 2.5rem;
 }
 
 h1, h2 + p {
   text-indent: 20px;
 }
+
+p, li {
+  font-size: 1.5rem;
+  line-height: 1.5;
+  letter-spacing: 0.5px;
+  word-spacing: 3px;
+}
+
+/* Link Styling */
+
+a {
+  outline: none;
+}
+
+a[href*="http"] {
+  padding-right: 19px;
+  background: url(external-link-52.png) no-repeat 100% 0;
+  background-size: 16px 16px;
+}
+
+a:link, a:visited {
+  color: #a66
+}
+
+a:focus, a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  color: red
+}
+
