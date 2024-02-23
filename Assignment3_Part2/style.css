@@ -5,13 +5,20 @@ html {
   /* Your CSS below here */
 
   div {
+
+    /* Size & Position */
+
     width: 200px;
     line-height: 10;
     margin:auto;
 
+    /* Text position, colour, and font size */
+
     font-size: 1.1rem;
     text-align: center;
     color: white;
+
+    /* Text shadow */
 
     text-shadow: 1px 1px 1px black;
 
