@@ -8,7 +8,7 @@ html {
 
     /* Size & Position */
 
-    width: 200px; /*A reasonable width for a large box, say around 200 pixels. */
+    width: 200px; /*A reasonable width for a large box, 200 pixels. */
     line-height: 10; /* A reasonable height for a large box, centering the text vertically in the process. */
     margin:auto;
 
@@ -29,7 +29,7 @@ html {
     box-shadow: 2px 2px 3px rgb(255, 255, 255, 0.6) 
                 inset, -2px -2px 3px rgb(0, 0, 0, 0.6) 
                 inset, 2px 2px 5px black; /*A linear semi-transparent black gradient that goes toward the bottom right corner. */
-                
+
     /*Multiple box shadows.*/
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6), 2px 2px 5px black;
