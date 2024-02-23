@@ -8,31 +8,29 @@ html {
 
     /* Size & Position */
 
-    width: 200px;
-    line-height: 10;
+    width: 200px; /*A reasonable width for a large box, say around 200 pixels. */
+    line-height: 10; /* A reasonable height for a large box, centering the text vertically in the process. */
     margin:auto;
 
     /* Text position, colour, and font size */
 
-    font-size: 1.1rem;
-    text-align: center;
+    font-size: 1.1rem; /*  17-18 pixel computed style using rems. Divide px by 16 to get the rem. 17pmx / 16 = 1.1 */
+    text-align: center; /* Center the text within the box. */
     color: white;
 
     /* Text shadow */
 
     text-shadow: 1px 1px 1px black;
 
-    border-radius: 10px;
-    border: 1px solid #990000;
+    border-radius: 10px; /* A fairly subtle border radius. */
+    border: 1px solid #990000; /* A 1-pixel solid border with a color similar to the base color */
 
-    background-color: red;
-    background-image: linear-gradient(
-        to top left,
-        black(0, 0, 0, 0.2),
-        black(0, 0, 0, 0.2) 30%,
-        black(0, 0, 0, 0)
-    );
-
+    background-color: red; /* Background of the box */
+    box-shadow: 2px 2px 3px rgb(255, 255, 255, 0.6) 
+                inset, -2px -2px 3px rgb(0, 0, 0, 0.6) 
+                inset, 2px 2px 5px black; /*A linear semi-transparent black gradient that goes toward the bottom right corner. */
+                
+    /*Multiple box shadows.*/
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
     inset -2px -2px 3px rgba(0, 0, 0, 0.6), 2px 2px 5px black;
     
