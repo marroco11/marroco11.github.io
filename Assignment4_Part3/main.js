@@ -1,5 +1,7 @@
 // setup canvas
 
+// The 4 provided constants
+
 const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 
@@ -18,6 +20,8 @@ function randomRGB() {
   return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
 }
 
+// The Ball class with the constructor
+
 class Ball {
     constructor(x, y, velX, velY, color, size) {
       this.x = x;
@@ -28,6 +32,7 @@ class Ball {
       this.size = size;
     }
     
+// The draw function
 
     draw() {
         ctx.beginPath();
@@ -35,6 +40,8 @@ class Ball {
         ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
         ctx.fill();
       }
+
+// The update function
 
       update() {
         if ((this.x + this.size) >= width) {
@@ -56,6 +63,8 @@ class Ball {
         this.x += this.velX;
         this.y += this.velY;
       }
+
+// The Collision Detection function
 
       collisionDetect() {
         for (const ball of balls) {
@@ -79,6 +88,8 @@ class Ball {
 
   const balls = [];
 
+  // The whole loop that creates 25 random balls
+
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
@@ -95,13 +106,17 @@ while (balls.length < 25) {
   balls.push(ball);
 }
 
+// The loop function
+
 function loop() {
-  ctx.fillStyle = "rgba(0, 0, 0, 1)";
+  ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect(); // Calling the collision detection function
+
   }
 
   requestAnimationFrame(loop);
