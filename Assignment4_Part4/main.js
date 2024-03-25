@@ -87,13 +87,75 @@ class Ball extends Shape{
     
             if (distance < this.size + ball.size) {
             ball.color = this.color = randomRGB();
+                }   
             }
         }
-        }
+    }           
+}
+
+// The EvilCircle class that is a child of the Shape class
+
+class EvilCircle extends Shape {
+    constructor (x,y) {
+        super(x,y,20, 20);
+
+        this.color = "white";
+        this.size = 10;
+
+        // To move the evil cirle around the screen
+
+        window.addEventListener("keydown", (e) => {
+            switch (e.key) {
+              case "a":
+                this.x -= this.velX;
+                break;
+              case "d":
+                this.x += this.velX;
+                break;
+              case "w":
+                this.y -= this.velY;
+                break;
+              case "s":
+                this.y += this.velY;
+                break;
+            }
+          });
+
     }
-      
-      
+
+// The Draw method
+
+    draw() {
+        ctx.beginPath();
+        ctx.strokeStyle = this.color;
+        ctx.lineWidth = 3;
+        ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+        ctx.stroke();
+
+    }
+
+// The CheckBounds method
+
+checkBounds() {
+    if (this.x + this.size >= width) {
+      this.x -= this.size;
+    }
+
+    if (this.x - this.size <= 0) {
+      this.x += this.size;
+    }
+
+    if (this.y + this.size >= height) {
+      this.y -= this.size;
+    }
+
+    if (this.y - this.size <= 0) {
+      this.y += this.size;
+    }
   }
+
+
+}
 
   const testBall = new Ball(50, 100, 4, 4, "blue", 10);
   testBall.draw();
