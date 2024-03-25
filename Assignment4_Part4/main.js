@@ -154,8 +154,26 @@ checkBounds() {
     }
   }
 
+  // The Collision Detection method
 
+  collisionDetect() {
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false;
+          count--;
+          para.textContent = "Ball count: " + count;
+        }
+      }
+    }
+  }
 }
+
 
   const testBall = new Ball(50, 100, 4, 4, "blue", 10);
   testBall.draw();
@@ -181,19 +199,29 @@ while (balls.length < 25) {
 }
 
 // The loop function
+// Bringing the evil circle into the program
 
 function loop() {
-  ctx.fillStyle = "rgb(0 0 0 / 25%)";
+  ctx.fillStyle = "rgba(0, 0, 0, 0.25)";
   ctx.fillRect(0, 0, width, height);
 
   for (const ball of balls) {
+    if(ball.exists) {
+
     ball.draw();
     ball.update();
     ball.collisionDetect(); // Calling the collision detection function
 
   }
+}
 
-  requestAnimationFrame(loop);
+// Calling the evil circle instances 
+
+evilBall.draw();
+evilBall.checkBounds();
+evilBall.collisionDetect();
+ 
+requestAnimationFrame(loop);
 }
 
 loop();
