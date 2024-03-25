@@ -1,5 +1,8 @@
 // setup canvas
 
+const para = document.querySelector('p');
+let count = 0;
+
 // The 4 provided constants
 
 const canvas = document.querySelector("canvas");
@@ -136,23 +139,23 @@ class EvilCircle extends Shape {
 
 // The CheckBounds method
 
-checkBounds() {
-    if (this.x + this.size >= width) {
-      this.x -= this.size;
-    }
+    checkBounds() {
+        if (this.x + this.size >= width) {
+        this.x -= this.size;
+        }
 
-    if (this.x - this.size <= 0) {
-      this.x += this.size;
-    }
+        if (this.x - this.size <= 0) {
+        this.x += this.size;
+        }
 
-    if (this.y + this.size >= height) {
-      this.y -= this.size;
-    }
+        if (this.y + this.size >= height) {
+        this.y -= this.size;
+        }
 
-    if (this.y - this.size <= 0) {
-      this.y += this.size;
+        if (this.y - this.size <= 0) {
+        this.y += this.size;
+        }
     }
-  }
 
   // The Collision Detection method
 
@@ -174,10 +177,6 @@ checkBounds() {
   }
 }
 
-
-  const testBall = new Ball(50, 100, 4, 4, "blue", 10);
-  testBall.draw();
-
   const balls = [];
 
   // The whole loop that creates 25 random balls
@@ -185,8 +184,10 @@ checkBounds() {
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
+
     // ball position always drawn at least one ball width
     // away from the edge of the canvas, to avoid drawing errors
+
     random(0 + size, width - size),
     random(0 + size, height - size),
     random(-7, 7),
@@ -196,7 +197,11 @@ while (balls.length < 25) {
   );
 
   balls.push(ball);
+  count++;
+  para.textContent = "Ball count: " + count;
 }
+
+const evilBall = new EvilCircle(random(0, width), random(0, height));
 
 // The loop function
 // Bringing the evil circle into the program
@@ -207,7 +212,6 @@ function loop() {
 
   for (const ball of balls) {
     if(ball.exists) {
-
     ball.draw();
     ball.update();
     ball.collisionDetect(); // Calling the collision detection function
@@ -217,10 +221,11 @@ function loop() {
 
 // Calling the evil circle instances 
 
+
 evilBall.draw();
 evilBall.checkBounds();
 evilBall.collisionDetect();
- 
+
 requestAnimationFrame(loop);
 }
 
