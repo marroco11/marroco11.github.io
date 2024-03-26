@@ -26,6 +26,7 @@ const newImage = document.createElement('img');
 newImage.setAttribute('src', `images/${image}`);
 newImage.setAttribute('alt', altText[image]);
 
+// An event listener for the "click" event on all thumbnails
 
 thumbBar.appendChild(newImage);
 newImage.addEventListener('click', () => {
@@ -39,10 +40,16 @@ newImage.addEventListener('click', () => {
 btn.addEventListener('click', () => {
     const btnClass = btn.getAttribute('class');
     if (btnClass === 'dark') {
+
+      // Lightens the button when clicked 
+
       btn.setAttribute('class','light');
       btn.textContent = 'Lighten';
       overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
     } else {
+
+      // Darkens the button when clocked
+      
       btn.setAttribute('class','dark');
       btn.textContent = 'Darken';
       overlay.style.backgroundColor = 'rgba(0,0,0,0)';
